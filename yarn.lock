@@ -117,7 +117,14 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@demon673/panorama-polyfill@^0.1.3":
+"@cabin-icarus/panorama-types@^1.20.0":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@cabin-icarus/panorama-types/-/panorama-types-1.20.0.tgz#7cfcab5dadab8112ec1bf4c0355a7c3fd0ccc8c6"
+  integrity sha512-DIq+nv2yFcM3QB9JHVpf3uW+bMAv90BgPcRZXQOKNH5I4FC8YLIbDZD7uSOCFHlJaSdFcQYlS2CpNOVz0fs5Sw==
+  dependencies:
+    tslib "^2.0.3"
+
+"@demon673/panorama-polyfill@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@demon673/panorama-polyfill/-/panorama-polyfill-0.1.4.tgz#809121359580917646a79433bb5da08dafa63e85"
   integrity sha512-jR1t6jj5M5h/uY3Z/W6jdwz/0gkOlrWZ14Iq3IcEXB/nimKROYgE2SBx5O4s9mNYRVvkyQPhHS3v/yR5XK/iaw==
@@ -1513,13 +1520,6 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
-panorama-types@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/panorama-types/-/panorama-types-1.5.2.tgz#8aa2e0ab8383dce809cb0d702656bcc20fb359f3"
-  integrity sha512-YC52IHicw0ilP6g+w/JAMAvWWMkGiJ4zxx0ZLFbijlC4CaBcmY+90aIyb4A3BDd6vgJ3XM9y/UBPn9zBR2lb7g==
-  dependencies:
-    tslib "^2.0.0"
-
 parent-module@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/parent-module/-/parent-module-1.0.1.tgz#691d2709e78c79fae3a156622452d00762caaaa2"
@@ -2051,10 +2051,10 @@ tslib@^1.8.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 
-tslib@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
-  integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
+tslib@^2.0.3:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.1.tgz#0d0bfbaac2880b91e22df0768e55be9753a5b17e"
+  integrity sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==
 
 tsutils@^3.17.1:
   version "3.17.1"
@@ -2080,10 +2080,10 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-typescript@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
-  integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
+typescript@^4.9.4:
+  version "4.9.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.4.tgz#a2a3d2756c079abda241d75f149df9d561091e78"
+  integrity sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==
 
 uri-js@^4.2.2:
   version "4.4.0"

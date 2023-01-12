@@ -107,6 +107,7 @@ const propertiesInformation: {
     update(panel, newValue) {
       panel.RemoveAndDeleteChildren();
       if (newValue) {
+        // @ts-ignore
         const status = panel.BCreateChildren(newValue);
         if (!status) {
           const indentedLayout = newValue.replace(/^/gm, '    ');
@@ -692,6 +693,7 @@ export function getPropertyInfo(
   if (type === 'GenericPanel') return genericPanelPropertyInfo;
 
   if (process.env.BUILD_ENV === 'development') {
+    // @ts-ignore
     console.warn(`Attribute "${propName}" on panel of type "${type}" is unknown`);
     return genericPanelPropertyInfo;
   }
