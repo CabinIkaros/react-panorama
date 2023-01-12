@@ -117,6 +117,13 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@demon673/panorama-polyfill@^0.1.3":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@demon673/panorama-polyfill/-/panorama-polyfill-0.1.4.tgz#809121359580917646a79433bb5da08dafa63e85"
+  integrity sha512-jR1t6jj5M5h/uY3Z/W6jdwz/0gkOlrWZ14Iq3IcEXB/nimKROYgE2SBx5O4s9mNYRVvkyQPhHS3v/yR5XK/iaw==
+  dependencies:
+    object-inspect "^1.8.0"
+
 "@eslint/eslintrc@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.1.3.tgz#7d1a2b2358552cc04834c0979bd4275362e37085"
@@ -1505,13 +1512,6 @@ p-try@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
-
-panorama-polyfill@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/panorama-polyfill/-/panorama-polyfill-0.1.0.tgz#049a9dd2a567ef3a46272d0eeed2894663288b47"
-  integrity sha512-EmWp/uJsCQFqjpIa+DS0ZqKS07msr6nQpfvzg3WdCoOl5I3F5H+MODGg/ff8u2q3xqLIymyLNv2ZUPq69OC0ow==
-  dependencies:
-    object-inspect "^1.8.0"
 
 panorama-types@^1.5.2:
   version "1.5.2"
