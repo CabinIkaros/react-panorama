@@ -11,6 +11,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: yarn --frozen-lockfile
       - run: yarn build
-      - run: yarn publish packages/panorama-types --access public
+      - run: yarn publish packages/react-panorama --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
