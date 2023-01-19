@@ -38,7 +38,7 @@ export function useNetTableKey<
   TName extends keyof CustomNetTableDeclarations,
   T extends CustomNetTableDeclarations[TName],
   K extends keyof T
->(name: TName, key: K): NetworkedData<T[K]> {
+>(name: TName, key: K): NetworkedData<T[K]> | null {
   const [value, setValue] = useState(() => CustomNetTables.GetTableValue<TName, T, K>(name, key));
 
   useEffect(() => {
