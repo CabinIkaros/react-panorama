@@ -19,48 +19,75 @@ export type InternalPanel<T extends PanelBase = Panel> = T & {
   _econItemStyle?: number;
 };
 
-// TODO: Put it into a shared library?
-const windowRoot = (() => {
-  let panel: Panel | null = $.GetContextPanel();
-  while (panel) {
-    if (panel.BHasClass('WindowRoot')) return panel;
-    panel = panel.GetParent();
+export const temporaryPanelHost = function ():Panel
+{
+  let temp = windowRoot.FindChildTraverse('__react_panorama_temporary_host__');
+
+  if (!temp)
+  {
+    temp = $.CreatePanel('Panel', windowRoot, '__react_panorama_temporary_host__');
+    temp.visible = false;
   }
-})()!;
 
-export const temporaryPanelHost =
-  windowRoot.FindChildTraverse('__react_panorama_temporary_host__') ??
-  $.CreatePanel('Panel', windowRoot, '__react_panorama_temporary_host__');
-temporaryPanelHost.RemoveAndDeleteChildren();
-temporaryPanelHost.visible = false;
+  return temp;
+}
 
-export const temporaryScenePanelHost =
-  windowRoot.FindChildTraverse('__react_panorama_temporary_scene_host__') ??
-  $.CreatePanel('Panel', windowRoot, '__react_panorama_temporary_scene_host__');
-temporaryScenePanelHost.RemoveAndDeleteChildren();
-temporaryScenePanelHost.visible = false;
+export const temporaryScenePanelHost = function ():Panel
+{
+  let temp = windowRoot.FindChildTraverse('__react_panorama_temporary_scene_host__');
 
-GameUI.CustomUIConfig().temporaryScheduleHandle = -1 as ScheduleID;
-const checkFunc = () => {
-  for (let i = 0; i < temporaryScenePanelHost.GetChildCount(); i += 1) {
-    const child = temporaryScenePanelHost.GetChild(i);
-    if (child !== null) {
-      if (child.BHasClass('SceneLoaded')) {
-        child.SetParent(temporaryPanelHost);
+  if (!temp)
+  {
+    temp = $.CreatePanel('Panel', windowRoot, '__react_panorama_temporary_scene_host__');
+    temp.visible = false;
+  }
+
+  return temp;
+}
+
+const checkFunc = () =>
+{
+  {
+    const temp = temporaryScenePanelHost();
+    for (let i = 0; i < temp.GetChildCount(); i += 1)
+    {
+      const child = temp.GetChild(i);
+      if (child !== null)
+      {
+        if (child.BHasClass('SceneLoaded'))
+        {
+          child.SetParent(temporaryPanelHost());
+        }
       }
     }
   }
 
-  temporaryPanelHost.RemoveAndDeleteChildren();
-  GameUI.CustomUIConfig().temporaryScheduleHandle = $.Schedule(1, checkFunc);
+  {
+    $.Msg("remove!!!!!!! temporaryPanelHost")
+    let panels = temporaryPanelHost().Children();
+    for (let i = panels.length - 1; i >= 0; i--)
+    {
+      panels[i].DeleteAsync(0);
+    }
+  }
+  // temporaryPanelHost.RemoveAndDeleteChildren();
+  windowRoot._temporaryScheduleHandle = $.Schedule(1, checkFunc);
 };
 
-if (GameUI.CustomUIConfig().temporaryScheduleHandle !== (-1 as ScheduleID)) {
-  try {
-    $.CancelScheduled(GameUI.CustomUIConfig().temporaryScheduleHandle);
-  } catch { }
-
-  GameUI.CustomUIConfig().temporaryScheduleHandle = -1 as ScheduleID;
+type _InPanel = Panel & {
+  _temporaryScheduleHandle:ScheduleID
 }
 
-checkFunc();
+// TODO: Put it into a shared library?
+const windowRoot:_InPanel = (() => {
+  let panel: Panel | null = $.GetContextPanel();
+  while (panel) {
+    if (panel.BHasClass('WindowRoot'))
+    {
+      $.Schedule(1,checkFunc)
+
+      return panel as _InPanel;
+    }
+    panel = panel.GetParent();
+  }
+})()!;

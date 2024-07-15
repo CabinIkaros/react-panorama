@@ -48,10 +48,10 @@ function removeChild(parent: InternalPanel, child: InternalPanel) {
     (child.paneltype === 'DOTAScenePanel' || child.paneltype === 'DOTAParticleScenePanel') &&
     !child.BHasClass('SceneLoaded')
   ) {
-    child.SetParent(temporaryScenePanelHost);
+    child.SetParent(temporaryScenePanelHost());
   } else {
-    child.SetParent(temporaryPanelHost);
-    temporaryPanelHost.RemoveAndDeleteChildren();
+    child.SetParent(temporaryPanelHost());
+    // temporaryPanelHost.RemoveAndDeleteChildren();
     // TODO: child.DeleteAsync(0)?
   }
 }
@@ -104,7 +104,6 @@ const hostConfig: ReactReconciler.HostConfig<
       type,
       $.GetContextPanel(),
       newProps.id || '',
-      // @ts-ignore
       initialProps ?? {},
     ) as InternalPanel;
 

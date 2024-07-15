@@ -7,7 +7,7 @@ export const panelBaseNames: ReadonlySet<string> = new Set([
 ]);
 
 export function fixPanelBase(panel: PanelBase) {
-  for (const [key, value] of Object.entries(temporaryPanelHost)) {
+  for (const [key, value] of Object.entries(temporaryPanelHost())) {
     if (typeof value === 'function') {
       (panel as any)[key] = value;
     }

@@ -117,10 +117,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@cabin-icarus/panorama-types@^1.20.0":
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/@cabin-icarus/panorama-types/-/panorama-types-1.20.0.tgz#7cfcab5dadab8112ec1bf4c0355a7c3fd0ccc8c6"
-  integrity sha512-DIq+nv2yFcM3QB9JHVpf3uW+bMAv90BgPcRZXQOKNH5I4FC8YLIbDZD7uSOCFHlJaSdFcQYlS2CpNOVz0fs5Sw==
+"@cabin-icarus/panorama-types@^1.31.0":
+  version "1.31.0"
+  resolved "https://registry.yarnpkg.com/@cabin-icarus/panorama-types/-/panorama-types-1.31.0.tgz#282c2354865cf26c5bc07844b92a5dfe29a45ed9"
+  integrity sha512-D5WkCZr1CpQNjtLx8aouJ51EYKtNXwgMC0Hn46WWxxu0bwiKtw2H3dq9doAqsATXfWDGxIZJ3jGpj+02grdZYQ==
   dependencies:
     tslib "^2.0.3"
 
