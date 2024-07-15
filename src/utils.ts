@@ -63,7 +63,6 @@ const checkFunc = () =>
   }
 
   {
-    $.Msg("remove!!!!!!! temporaryPanelHost")
     let panels = temporaryPanelHost().Children();
     for (let i = panels.length - 1; i >= 0; i--)
     {
