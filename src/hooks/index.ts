@@ -48,6 +48,9 @@ export function useNetTableKey<
       }
     });
 
+    const value = CustomNetTables.GetTableValue<TName, T, K>(name, key)
+    setValue(value);
+
     return () => CustomNetTables.UnsubscribeNetTableListener(listener);
   }, [name, key]);
 
@@ -68,10 +71,17 @@ export function useNetTableValues<
     ),
   );
 
-  useEffect(() => {
+  useEffect(() => 
+  {
     const listener = CustomNetTables.SubscribeNetTableListener(name, (_, eventKey, eventValue) => {
       setValue((current) => ({ ...(current as any), [eventKey]: eventValue }));
     });
+
+    const value = CustomNetTables.GetAllTableValues<TName, T>(name).reduce<NetworkedData<T>>(
+      (accumulator, pair) => ({ ...(accumulator as any), [pair.key]: pair.value }),
+      {} as any,
+    ),
+    setValue(value);
 
     return () => CustomNetTables.UnsubscribeNetTableListener(listener);
   }, [name]);
