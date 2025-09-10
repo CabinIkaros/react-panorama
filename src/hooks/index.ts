@@ -77,11 +77,11 @@ export function useNetTableValues<
       setValue((current) => ({ ...(current as any), [eventKey]: eventValue }));
     });
 
-    const value = CustomNetTables.GetAllTableValues<TName, T>(name).reduce<NetworkedData<T>>(
+    const value =   CustomNetTables.GetAllTableValues<TName, T>(name).reduce<NetworkedData<T>>(
       (accumulator, pair) => ({ ...(accumulator as any), [pair.key]: pair.value }),
       {} as any,
-    ),
-    setValue(value);
+    );
+    setValue(value)
 
     return () => CustomNetTables.UnsubscribeNetTableListener(listener);
   }, [name]);
